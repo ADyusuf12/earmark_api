@@ -15,9 +15,6 @@ class UserProfileViewSet(viewsets.ModelViewSet):
     serializer_class = UserProfileSerializer
     permission_classes = [permissions.AllowAny]
 
-    def get_queryset(self):
-        return UserProfile.objects.filter(user=self.request.user)
-
 
 class InterestViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = UserInterest.objects.all()
