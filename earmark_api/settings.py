@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
+    'django_filters',
     'accounts',
     'properties',
     'blog',
@@ -61,6 +62,8 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+    'DEFAULT_PAGINATION_CLASS': 'properties.pagination.CustomPropertyPagination',
+    'PAGE_SIZE': 10,
 }
 
 TEMPLATES = [

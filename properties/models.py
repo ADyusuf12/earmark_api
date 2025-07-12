@@ -24,6 +24,8 @@ class Property(models.Model):
     image = models.ImageField(upload_to='property_images/', blank=True, null=True)
     is_available = models.BooleanField(default=True)
     date_posted = models.DateTimeField(auto_now_add=True)
+    is_featured = models.BooleanField(default=False)
+    view_count = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.title
